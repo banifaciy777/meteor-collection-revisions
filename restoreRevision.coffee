@@ -3,7 +3,7 @@ root = exports ? this
 root.CollectionRevisions.restore = (collectionName, documentId, revision) ->
 
   check(collectionName, String)
-  check(documentId, String)
+  check(documentId, Match.OneOf(String, Object))
   check(revision, Match.OneOf(String, Object))
 
   #Load the collection
